@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	</head>
+<style>
+
+		body 
+		{
+			font-family: Chalkduster, Cambria Math;
+			font-size: 17px;
+			color: #4E9843;
+			margin: auto;
+			background-color: black;
+		}
+		
+		
+		
+		
+		.container 
+		{
+	
+			background-image: url("https://i.imgur.com/WN1u3Fz.png");
+			color: #eee6ff;
+			background-repeat: repeat;
+			background-size: cover;
+			background-color: black;
+			display: flex;
+			min-height: 500px; 	
+			
+			
+		}
+		
+		
+		
+		main 
+		{
+			margin: auto;
+		}
+	
+
+
+
+		nav ul	
+		{
+			display: flex;
+			list-style: none;
+		}
+		
+		nav li 
+		{
+			margin-right: 20px;
+		}
+		
+		nav li:last-child 
+		{
+			margin-right: 0;
+		}
+
+		nav a 
+		{
+			text-decoration: none;
+			color: black;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover 	
+		{
+			color: #0077FF;
+		}
+		
+		
+		
+		.review
+		{
+			display: flex;
+			margin: 20px 0;
+		}
+
+		.review img 
+		{
+			margin-right: 15px;
+
+		}
+	
+		.review-text h3 
+		{
+			font-family: Avanta Garde;
+			font-size: 75px;
+			margin-top: 0;
+			color: #CCEBDC;
+		}
+		
+		.review-text p 
+		{
+			font-family: Rockwell;
+			font-size: 17px;
+			color: #D5F5F0;
+			text-align: left;
+		}	
+		
+		.review-text a 
+		{
+			display: inline-block;
+			margin-top: 10px;
+			background-color: #0077FF;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.review-text a:hover 
+		{
+			background-color: #0066CC;
+		}
+		
+		
+		
+		.report img
+		{
+			margin-right: 15px;
+		}
+		
+		
+		
+		fieldset dl
+		{
+			font-family: Hoefler Text;
+			color: #CCEBDC;
+			padding: 10px;
+			margin: 30px;
+		}	
+		
+		
+		
+		
+		
+		.slideshow-container 
+		{
+			height: 50%;
+			position: relative;
+			color: #CCEBDC;
+			background-color: #0E3029;		
+			background-repeat: repeat;
+			background-size: cover;
+		}
+		
+		.mySlides 
+		{
+			font-family: Hoefler Text;
+			color: #CCEBDC;
+			text-align: center;
+			margin: 30px;
+			display: none;
+			padding: 80px;
+		}
+			
+		.mySlides h2
+		{
+			font-family: Baskerville;
+			color: #CCEBDC;
+			text-shadow: 5px 5px black;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 25px;
+			width: 90%;
+		}
+		
+		
+		
+		
+		.prev, .next 
+		{
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			margin-top: -30px;
+			padding: 16px;
+			color: #888;
+			font-weight: bold;
+			font-size: 20px;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+			
+		.next 
+		{
+			position: absolute;
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+			
+		.prev:hover, .next:hover 
+		{
+			background-color: rgba(0,0,0,0.8);
+			color: #19594B;
+		}
+		
+		
+		
+		
+		.dot-container 
+		{
+			text-align: center;
+			padding: 20px;
+			background: #0E3029;
+		}
+			
+		.dot 
+		{
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+		
+		.active, .dot:hover 
+		{
+			background-color: #717171;
+		}
+		
+		q { font-size: medium;}
+		doc {color: rgb(8, 8, 8);}
+
+		
+		
+		footer 
+		{
+			background-color: black;
+			color: #BCBED1;
+			text-align: center;
+			padding: 20px 0;
+			border-top: 1px solid #DDD;
+		}	
+		
+</style>
+
+				<!-- SLIDER -->
+				
+				
+	<script>
+		
+			var slideIndex = 1;
+			showSlides(slideIndex);
+        
+			function plusSlides(n) 
+			{
+				showSlides(slideIndex += n);
+			}
+        
+			function currentSlide(n) 
+			{
+				showSlides(slideIndex = n);
+			}
+        
+			function showSlides(n) 
+			{
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}    
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) 
+					{
+						slides[i].style.display = "none";  
+					}
+				for (i = 0; i < dots.length; i++) 
+					{
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+			}
+			
+    </script>		
+		
+		
+		
+	
+<body>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+			text-decoration: none;
+			list-style: none;
+		
+		}
+		
+		:root{
+			--bg-color: #222327;
+			--text-color: #fff;
+		}
+		
+		.home {
+			display: flex;
+			align-items: center;
+		}
+		
+		.home i {
+			color: white;
+			font-size: 29px;
+			margin-right: 3px;
+		}
+		
+		body{
+			min-height: 100vh;
+			background: var(--bg-color);
+			color: var(--text-color);
+		
+		}
+		
+		header{
+			width: 100%;
+			height: 80px;    
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0px 100px;
+		}
+		
+		.navbar{
+			display: flex;
+			
+		}
+		
+		.navbar a{
+			color: var(--text-color);
+			font-size: 1.1rem;
+			font-weight: bold;
+			padding: 5px 0;
+			margin: 0px 30px;
+			transition: all .50s ease;
+		}
+		
+		.navbar a:hover{
+    color: pink;
+}
+	  </style>
+	  <header>
+  
+			<a href = "index.html" class ="home"><i class="ri-home-line"></i></a>
+			<ul class="navbar">
+				<li><a href = "CAMPOS_SOCIAL-NETWORK.html">Campos, G</a></li>
+				<li><a href = "The-Matrix.html">Campos, S</a></li>
+				<li><a href = "The-Matrix-Comia.html">Comia</a></li>
+				<li><a href = "DESOYO_SOCIAL-NETWORK.html">Desoyo</a></li>
+				<li><a href = "ORTEGA_THE-MATRIX.html">Ortega</a></li>
+				<li><a href = "Ucol_The-Internship.html">Ucol</a></li>
+	
+			</ul>
+  
+		
+	</header>
+    
+	<div class="container">
+		<main>
+		
+			<div class="review">
+				<img src="https://i.imgur.com/LkMkoqa.png" height = "300" width = "300" alt="Movie Poster">
+				<div class="review-text">
+				
+					<h3>THE MATRIX</h3>
+					<p>When a beautiful stranger (Carrie Ann Moss) leads computer hacker Neo (Keanu Reeves)</p>
+					<p>To a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate</p> 
+					<p>Deception of an evil cyber-intelligence. Neo joins legendary and dangerous rebel warrior </p>
+					<p>Morpheus (Lawrence Fishburne) in the battle to destroy the illusion enslaving humanity.</p>
+				</div>
+			</div>
+			
+		</main>
+    </div>
+	
+	
+	
+	<fieldset>
+	<legend><b>MOVIE REPORT</b></legend>
+    <div id="SLIDER" class="slideshow-container">
+	
+	<div class="mySlides">
+		<h2>THE MATRIX MOVIE REPORT:</h2>	
+	</div>	
+	
+	
+	
+	 <div class="mySlides">
+        <dl>	
+		<dt><b>a. Introduction:</b></dt>
+				
+				<dd>-> The Wachowskis directed the science-fiction action film "The Matrix" in 1999.  
+				The main actors of the film are Keanu Reeves as Thomas A. Anderson / Neo, Laurence 
+				Fishburne as Morpheus, Carrie-Anne Moss as Trinity, Hugo Weaving as Agent Smith and 
+				Joe Pantoliano as Cypher. The plot is set in a dystopian future in which machines 
+				have conquered the world and enslaved humanity by trapping them in a simulated reality 
+				known as the Matrix. The plot revolves around Thomas Anderson, a hacker known as Neo, 
+				who is approached by a group of rebels led by Morpheus who reveal the true nature of 
+				his reality and offer to assist him in escaping the Matrix.
+				</dd>
+				
+				
+	&nbsp &nbsp
+		
+			
+		<dt><b>b. Plot summary:</b></dt>
+			
+			<dd>-> The plot revolves around Thomas A. Anderson, also known as Neo, a hacker. He is 
+			contacted by a mysterious group of rebels led by Morpheus, who reveal the true nature 
+			of his reality to him and offer to assist him in escaping the Matrix. With the help of 
+			Morpheus and his crew, including the skilled warrior Trinity, Neo discovers the nature of 
+			the Matrix and his own destiny as "The One," a prophesied hero with the power to defeat 
+			the machines and save humanity.
+				
+			Neo is being pursued by the sinister Agents, led by Agent Smith, who are tasked with 
+			preventing him and the rebel group from destabilizing the Matrix. Throughout the film, Neo, 
+			Trinity, and Morpheus face various challenges and take part in spectacular action sequences 
+			that include martial arts, gunfights, and gravity-defying stunts. Finally, Neo must face his 
+			fate and the machines in a final battle in which humanity's fate is at stake.		
+			</dd>
+				
+		</dl>				
+    </div>
+	
+	
+	
+	<div class="mySlides">
+    
+		<dt><b>c. Analysis of themes and messages:</b></dt>
+      
+			<dd>-> The film explores the relationship between technology and humanity, asking whether 
+				technology can aid or hinder human potential. It implies that technology, depending on how it is 
+				used, can be both liberating and oppressive. The film also follows the traditional hero's journey 
+				archetype, with Neo as the hero who goes through a transformation and eventually triumphs over his 
+				obstacles. This theme emphasizes the importance of self-discovery and perseverance in the face of 
+				adversity. It also deals with existentialist issues like the meaning of life and the purpose of 
+				existence. It implies that instead of relying on external sources, people must create their own meaning 
+				and purpose. Overall, "The Matrix" is a film that forces viewers to reconsider their beliefs about reality, 
+				identity, and the nature of humanity. Even in the face of overwhelming opposition, it encourages viewers to 
+				think critically and seek the truth.	
+			</dd>	
+			
+		
+	&nbsp &nbsp
+		
+		
+		<dt><b>d. Technical aspects:</b></dt>
+      
+			<dd>-> The film used cutting-edge visual effects, such as "bullet time" technology, which allowed for 
+			slow-motion shots of characters dodging bullets in mid-air. Wirework and martial arts choreography were 
+			also used to create dynamic and visually stunning fight scenes in the film. During action scenes, the 
+			cinematography also used a mix of handheld and steady shots to create a sense of urgency and intensity.
+				
+			The film's sound design, which included a blend of orchestral music and electronic beats to complement 
+			the futuristic setting, was crucial to its success. The use of sound effects such as the Matrix's hum and 
+			phone rings enhanced the immersive experience of the film.
+			</dd>		  
+				 
+    </div>	
+	
+	
+	
+	<div class="mySlides">
+        <dt><b>e. Acting:</b></dt>
+      
+		<dd> <b>Keanu Reeves</b> as <em>Neo</em>: Reeves played Neo with the perfect blend of vulnerability and tenacity. He convincingly 
+				portrayed Neo's transformation from a reluctant hero to a confident and powerful leader.</dd>	
+			<dd> <b>Laurence Fishburne</b> as <em>Morpheus</em>: Fishburne was fantastic as Morpheus, imbuing the character with gravitas and 
+				wisdom. Morpheus' unwavering faith in Neo and dedication to the rebellion helped to establish him as one of the 
+				film's most memorable characters.</dd>
+			<dd> <b>Carrie-Anne Moss</b> as <em>Trinity</em>: Moss delivered an outstanding performance as Trinity, the skilled warrior who fights 
+				alongside Neo and Morpheus. She embodied the character with ferocious intensity, exuding loyalty and dedication to 
+				the cause.</dd>
+			<dd> <b>Hugo Weaving</b> as <em>Agent Smith</em>: Weaving was excellent as the film's sinister and relentless antagonist, Agent Smith. 
+				He portrayed the character as cold and calculated, creating a formidable foe for Neo and the other rebels.</dd>
+			<dd> <b>Joe Pantoliano</b> as <em>Cypher</em>: Pantoliano played Cypher, a rebel group member who betrays them for selfish reasons. 
+				He convincingly portrayed Cypher's desperation and disillusionment, heightening the tragedy of his betrayal.
+		</dd>
+		
+		
+    </div>
+	
+	
+	
+	
+	<div class="mySlides">
+        <dt><b>f. Overall evaluation:</b></dt>
+				
+				<dd>-> I liked how the film was presented in a stylish and visually stunning manner, combining groundbreaking visual 
+				effects, innovative cinematography, and immersive sound design. Their direction contributed to the film's status as 
+				a classic while also raising the bar for action filmmaking. It also delves into profound and complex themes such as 
+				the nature of reality, free will, and the human condition. Because of its provocative ideas, it has piqued the interest 
+				of both audiences and academics, making it one of the most intellectually engaging films of its generation. There is 
+				nothing I dislike about this film because I enjoyed how the story flowed and the overall content. 			
+		</dd>
+		
+		
+		&nbsp &nbsp
+		
+		
+		<dt><b>g. Conclusion:</b></dt>
+		
+				<dd>-> In conclusion, "The Matrix" (1999) is a timeless film that blends groundbreaking action sequences with thought-provoking 
+				philosophical explorations. The film's premise of a simulated reality controlled by intelligent machines, combined with themes 
+				of free will and reality's nature, makes it an engaging and entertaining film that will appeal to a wide audience. 			
+				
+				
+				Fans of action movies, science fiction, and philosophy will enjoy this film. Fans of the genre will appreciate the film's dystopian 
+				cyberpunk aesthetic.  "The Matrix" is a must-see for anyone looking for an entertaining and thought-provoking film that combines 
+				groundbreaking action with philosophical themes.
+				
+		</dd>	  	
+			
+		
+	</div>		
+	
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+	  <span class="dot" onclick="currentSlide(4)"></span> 
+	  <span class="dot" onclick="currentSlide(5)"></span> 
+	  
+    </div>
+	
+	
+	</fieldset>
+	
+	
+	
+	<footer>
+        <p>&copy; 2023 Movie Report | Ortega, Lorelee</p>
+    </footer>
+
+
+</body>
+</html>
+	
+	

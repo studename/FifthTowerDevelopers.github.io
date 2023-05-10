@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	</head>
+<style>
+
+		body 
+		{
+			font-family: Lucida Console;
+			font-size: 17px;
+			color: pink;
+			margin: auto;
+			background-color:black;
+		}
+		
+		
+		
+		
+		.container 
+		{
+	
+			background-image:url("https://i.imgur.com/RkohFHg.jpg");
+			color: #eee6ff;
+			background-repeat: repeat;
+			background-size: cover;
+			background-color: white;
+			display: flex;
+			min-height: 500px; 	
+			
+			
+		}
+		
+		
+		
+		main 
+		{
+			margin: auto;
+		}
+		nav ul	
+		{
+			display: flex;
+			list-style: none;
+		}
+		
+		nav li 
+		{
+			margin-right: 20px;
+		}
+		
+		nav li:last-child 
+		{
+			margin-right: 0;
+		}
+
+		nav a 
+		{
+			text-decoration: none;
+			color: black;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover 	
+		{
+			color: #0077FF;
+		}
+		
+		
+		
+		.review
+		{
+			display: flex;
+			margin: 20px 0;
+		}
+
+		.review img 
+		{
+			margin-right: 15px;
+
+		}
+	
+		.review-text h3 
+		{
+			font-family: Impact;
+			font-size: 75px;
+			margin-top: 0;
+			color: pink;
+		}
+		
+		.review-text p 
+		{
+			font-family: Bahnschrift;
+			font-size: 17px;
+			color: pink;
+			text-align: left;
+		}	
+		
+		.review-text a 
+		{
+			display: inline-block;
+			margin-top: 10px;
+			background-color: #0077FF;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.review-text a:hover 
+		{
+			background-color: #0066CC;
+		}
+		
+		
+		
+		.report img
+		{
+			margin-right: 15px;
+		}
+		
+		
+		
+		fieldset dl
+		{
+			font-family: Copperplate Gothic Light;
+			color: black;
+			padding: 10px;
+			margin: 30px;
+		}
+		.slideshow-container 
+		{
+			height: 50%;
+			position: relative;
+			color: black;
+			background-color: pink;		
+			background-repeat: repeat;
+			background-size: cover;
+		}
+		
+		.mySlides 
+		{
+			font-family: Copperplate Gothic Light;
+			color: black;
+			text-align: center;
+			margin: 30px;
+			display: none;
+			padding: 80px;
+		}
+			
+		.mySlides h2
+		{
+			font-family: Copperplate Gothic Light;
+			color: white;
+			text-shadow: 5px 5px black;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 25px;
+			width: 90%;
+		}
+		
+		
+		
+		
+		.prev, .next 
+		{
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			margin-top: -30px;
+			padding: 16px;
+			color: #888;
+			font-weight: bold;
+			font-size: 20px;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+			
+		.next 
+		{
+			position: absolute;
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+			
+		.prev:hover, .next:hover 
+		{
+			background-color: rgba(0,0,0,0.8);
+			color: #19594B;
+		}
+		
+		
+		
+		
+		.dot-container 
+		{
+			text-align: center;
+			padding: 20px;
+			background: pink;
+		}
+			
+		.dot 
+		{
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: black;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+		
+		.active, .dot:hover 
+		{
+			background-color: #717171;
+		}
+		
+		q { font-size: medium;}
+		doc {color: rgb(8, 8, 8);}
+
+		
+		
+		footer 
+		{
+			background-color: black;
+			color: pink;
+			text-align: center;
+			padding: 20px 0;
+			border-top: 1px solid #DDD;
+		}
+
+</style>
+
+				<!-- SLIDER -->
+				
+				
+	<script>
+		
+			var slideIndex = 1;
+			showSlides(slideIndex);
+        
+			function plusSlides(n) 
+			{
+				showSlides(slideIndex += n);
+			}
+        
+			function currentSlide(n) 
+			{
+				showSlides(slideIndex = n);
+			}
+        
+			function showSlides(n) 
+			{
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}    
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) 
+					{
+						slides[i].style.display = "none";  
+					}
+				for (i = 0; i < dots.length; i++) 
+					{
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+			}
+			
+    </script>
+	<body>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+				text-decoration: none;
+				list-style: none;
+			
+			}
+			
+			:root{
+				--bg-color: #222327;
+				--text-color: #fff;
+			}
+			
+			.home {
+				display: flex;
+				align-items: center;
+			}
+			
+			.home i {
+				color: white;
+				font-size: 29px;
+				margin-right: 3px;
+			}
+			
+			body{
+				min-height: 100vh;
+				background: var(--bg-color);
+				color: var(--text-color);
+			
+			}
+			
+			header{
+				width: 100%;
+				height: 80px;    
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0px 100px;
+			}
+			
+			.navbar{
+				display: flex;
+				
+			}
+			
+			.navbar a{
+				color: var(--text-color);
+				font-size: 1.1rem;
+				font-weight: bold;
+				padding: 5px 0;
+				margin: 0px 30px;
+				transition: all .50s ease;
+			}
+	  
+			.navbar a:hover{
+		  color: pink;
+	  }
+	  
+		  </style>
+		  <header>
+	  
+				<a href = "index.html" class ="home"><i class="ri-home-line"></i></a>
+				<ul class="navbar">
+					<li><a href = "CAMPOS_SOCIAL-NETWORK.html">Campos, G</a></li>
+					<li><a href = "The-Matrix.html">Campos, S</a></li>
+					<li><a href = "The-Matrix-Comia.html">Comia</a></li>
+					<li><a href = "DESOYO_SOCIAL-NETWORK.html">Desoyo</a></li>
+					<li><a href = "ORTEGA_THE-MATRIX.html">Ortega</a></li>
+					<li><a href = "Ucol_The-Internship.html">Ucol</a></li>
+		
+				</ul>
+	  
+			
+		</header>
+    
+	<div class="container">
+		<main>
+		
+			<div class="review">
+				<img src="https://i.imgur.com/UTE4oYR.jpg"  height = "300" width = "300" alt="Movie Poster">
+				<div class="review-text">
+				
+					<h3>THE INTERNSHIP</h3>
+					<p>When their employer goes out of business, Billy McMahon (Vince Vaughn) and Nick Campbell (Owen Wilson)</p>
+					<p>lose their jobs as watch salesman and look for new ones.They are the only interns who are not of standard</p>
+					<p>collegiate age. Billy then files for an internship at Google. Despite having no relevant Despite having no </p>
+					<p>relevant experience, they are approved thanks to their unconventional interview responses.</p>
+				
+				</div>
+			</div>
+			
+		</main>
+    </div>
+	
+	
+	
+	<fieldset>
+	<legend><b>MOVIE REPORT</b></legend>
+    <div id="SLIDER" class="slideshow-container">
+	
+	<div class="mySlides">
+		<h2>THE INTERNSHIP MOVIE REPORT:</h2>	
+	</div>	
+	
+	
+	
+	 <div class="mySlides">
+        <dl>	
+		<dt><b>Introduction:</b></dt>
+				
+				<dd>-> Shawn Levy's 2013 comedy "The Internship" stars Vince Vaughn and Owen Wilson as two middle-aged marketers 
+				who decide to change their lives by working as interns at Google. A fantastic ensemble cast, including Rose Byrne,
+				Max Minghella, and Aasif Mandvi, is featured in the movie. It tackles the difficulties of being the most senior 
+				interns among a group of youthful, tech-savvy college grads as well as the personal development that results from 
+				adjusting to new situations.
+				</dd>
+				
+				
+	&nbsp &nbsp
+		
+			
+		<dt><b>Plot summary:</b></dt>
+			
+			<dd>-> Billy and Nick encounter difficulty integrating with their younger, more technologically aware counterparts as 
+			they get to know their other interns. However, they quickly realize that they each have strengths that the team can use,
+			and they start collaborating to overcome the obstacles. Billy and Nick encounter a number of challenges throughout the 
+			film, such as competing against other teams, coping with personal matters, and navigating Google's corporate environment. 
+			However, students gradually come to understand that success requires more than just technical expertise; it also requires 
+			teamwork, creativity, and a willingness to take chances.
+			</dd>
+				
+		</dl>				
+    </div>
+	
+	
+	
+	<div class="mySlides">
+    
+		<dt><b>Analysis of themes and messages:</b></dt>
+      
+			<dd>-> 	The idea that it's never too late to start over and seek a new career path is one of The Internship's central themes.
+			The film demonstrates that everyone, regardless of age or background, can achieve their goals with effort, tenacity, and a 
+			willingness to learn.
+
+			The importance of teamwork and collaboration is a further key message in the movie. In addition to their unique talents, Billy 
+			and Nick's success at Google also stems from their ability to collaborate and strengthen one another's areas of weakness.
+			
+			The value of imagination and originality is also emphasized throughout the film. In one scene, Billy and Nick solve a conundrum
+			that the younger interns had been grappling with for days in a creative way. This demonstrates that individuals who bring a fresh 
+			perspective and are unconstrained by assumptions or habits sometimes make the most meaningful contributions.
+			</dd>	
+			
+		
+	&nbsp &nbsp
+		
+		
+		<dt><b>Technical aspects:</b></dt>
+      
+			<dd>-> The Internship is a well-made movie in terms of its technical qualities. The Google site and its surroundings are beautifully
+			captured in some of the superb cinematography. Particularly in the sequences where the interns are competing in various challenges, 
+			the special effects are amazing.
+
+			Furthermore remarkable are the sound design and soundtrack. Great songs that go well with the tone and feel of the movie are included 
+			on the soundtrack. The film's total immersion is enhanced by the well-done sound effects.
+			</dd>		  
+				 
+    </div>	
+	
+	
+	
+	<div class="mySlides">
+        <dt><b>Acting:</b></dt>
+      
+		<dd> <b>Vince Vaughn</b> as <em>Billy McMahon</em>: Billy McMahon, a fast-talking salesperson who
+		teams up with his pal Nick to secure an internship at Google. As the witty, motormouthed character
+		he is known for, Vaughn gives a usual performance, bringing a lot of enthusiasm and humor to the part. </dd>	
+			
+			<dd> <b>Owen Wilson</b> as <em>Nick Campbell</em>: Nick Campbell, Billy's friend and fellow applicant for the internship. In this role,
+			Nick shows off his signature carefree charm in full force. Nick has a likeable, laid-back personality that contrasts well with Billy's 
+			more tense persona. Wilson gives a strong performance throughout the picture and gets along well with Vaughn.</dd>
+			
+			<dd> <b>Rose Byrne</b> as <em>Dana</em>: Dana, a Google employee who plays the part of Nick's love interest. Byrne excels in the role,
+			bringing warmth and humor to it, and she clicks well with Wilson. Despite having less on-screen time than the two stars, Byrne makes the
+			most of her opportunities and gives a standout performance. </dd>
+			
+			<dd> <b>Max Minghella</b> as <em>Graham Hawtrey</em>:Graham Hawtrey, a competing intern who is also seeking for a position at Google.
+			As the haughty, preppy Graham, Minghella offers a strong portrayal. He does an excellent job of making the character both sympathetic 
+			and unlikeable. </dd>
+
+			<dd> <b>Aasif Mandvi</b> as <em>Mr. Chetty</em>: Mr. Chetty, the strict supervisor of the interns. The dry humor that Mandvi offers to the
+			part complements Vaughn and Wilson's more animated performances admirably. </dd>
+		
+		
+    </div>
+	
+	
+	
+	<div class="mySlides">
+        <dt><b>Overall evaluation:</b></dt>
+				
+				<dd>-> I liked the film "The Internship" becuase it is a fun and inspirational film that will make viewers feel good. The characters are nice
+				and sympathetic, and the humor is light and simple to take in. With a well-known underdog story arc and happy conclusion, the movie's possible
+				drawback is that it may be too formulaic and predictable for some audiences. 			
+		</dd>
+		
+		
+		&nbsp &nbsp
+		
+		
+		<dt><b>Conclusion:</b></dt>
+		
+				<dd>-> In conclusion, "The Internship" (2013) is a lighthearted comedy that will be enjoyed by a wide variety of viewers, especially those who like
+				stories about personal development and transformation. Although it might not be the most innovative or unique picture ever made, it is a well-made
+				and fun movie that is guaranteed to make you grin.
+				
+		</dd>	  	
+			
+		
+	</div>		
+	
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+	  <span class="dot" onclick="currentSlide(4)"></span> 
+	  <span class="dot" onclick="currentSlide(5)"></span> 
+	  
+    </div>
+	
+	
+	</fieldset>
+	
+	
+	
+	<footer>
+        <p>&copy; 2023 Movie Report</p>
+    </footer>
+
+
+</body>
+</html>
